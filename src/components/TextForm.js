@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-
+  
 export default function TextForm(props){
 
     const handleUpClick = () =>{
         let newText = text.toUpperCase()
         setText(newText)
         props.showAlert("Converted to Upper case","success")
+        console.log(text)
     }
     const handleOnChange = (e) =>{
         setText(e.target.value)
@@ -22,7 +23,7 @@ export default function TextForm(props){
         </div>
         <div className='container my-3'style = {{color: props.Mode === 'dark'?'white':'black'}}>
             <h1>Your Text Summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>{text !== ""? text.split(" ").length:0} words and {text.length} characters</p>
             <p>{0.008*text.split(" ").length} minutes read</p>
         </div>
         </>
