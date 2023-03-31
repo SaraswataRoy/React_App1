@@ -41,10 +41,10 @@ function App() {
         <Alert alert = {alert}/>
         <div className='container'>
         <Routes>
-          <Route exact path='/about' element={<About />} />
+          <Route exact path='/about' element={<About mode={Mode}/>} />
           <Route exact path='/' element={<TextForm heading="Enter text to analyze" Mode = {Mode} showAlert = {showAlert}/> } />
         </Routes>
-          {/* <About/> */}
+          {/* <About mode={Mode}/> */}
         </div>
       </Router>
     </>
